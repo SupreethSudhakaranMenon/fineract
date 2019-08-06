@@ -17,17 +17,21 @@
  * under the License.
  */
 
-package org.apache.fineract.accounting.helloworld.api;
+package org.apache.fineract.helloworld.api;
+import org.springframework.stereotype.Component;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
 
+
+@Component
 @Path("/helloworld")
 public class HelloWorldApiResource {
     @GET
     @Produces("text/plain")
     public String getClichedMessage() {
-        return "Hello World";
+        return "Success";
     }
 }
 

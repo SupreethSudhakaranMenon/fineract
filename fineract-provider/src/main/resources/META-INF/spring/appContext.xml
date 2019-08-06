@@ -59,6 +59,7 @@
 										  org.apache.fineract.useradministration.*,
 										  org.apache.fineract.batch,
 										  org.apache.fineract.adhocquery.*,
+										  org.apache.fineract.helloworld.*,
 										  org.apache.fineract.infrastructure.campaigns.**">
 		<context:exclude-filter expression="org.springframework.stereotype.Controller"
 			type="annotation" />
