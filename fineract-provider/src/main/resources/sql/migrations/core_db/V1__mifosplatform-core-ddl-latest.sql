@@ -95,6 +95,9 @@ CREATE TABLE `m_feature` (
     PRIMARY KEY (`id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+--==========================  end  of scorecard tables ========================= --
+
 -- DDL for reference/lookup tables
 CREATE TABLE `m_currency` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
