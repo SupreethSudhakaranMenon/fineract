@@ -78,7 +78,22 @@ DROP TABLE IF EXISTS `stretchy_parameter`;
 DROP TABLE IF EXISTS `stretchy_report`;
 DROP TABLE IF EXISTS `stretchy_report_parameter`;
 
+-- drop scorecard related tables
+DROP TABLE IF EXISTS `m_feature`;
+DROP TABLE IF EXISTS `m_configuration`;
+
 SET foreign_key_checks = 1;
+
+-- DDL for scorecard tables
+CREATE TABLE `m_feature` (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `feature` varchar(20) DEFAULT NULL,
+    `value` varchar(20) DEFAULT NULL ,
+    `data` varchar(20) DEFAULT NULL ,
+    `category` varchar(20) DEFAULT NULL ,
+    `status` varchar(10) DEFAULT NULL ,
+    PRIMARY KEY (`id`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- DDL for reference/lookup tables
 CREATE TABLE `m_currency` (
