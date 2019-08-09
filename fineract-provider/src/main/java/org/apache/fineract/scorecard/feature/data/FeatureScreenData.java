@@ -19,7 +19,7 @@
 
 package org.apache.fineract.scorecard.feature.data;
 
-public class FeatureData {
+public class FeatureScreenData {
 
     private final Long id;
     private final String feature;
@@ -27,9 +27,7 @@ public class FeatureData {
     private final String data;
     private final String category;
 
-
-
-    public FeatureData (final Long id, final String feature, final String value, final String data, final String category) {
+    public FeatureScreenData (final Long id,final String feature,final String value,final String data,final String category) {
         this.id = id;
         this.feature = feature;
         this.value = value;
@@ -37,9 +35,13 @@ public class FeatureData {
         this.category = category;
     }
 
-    public Long getId() { return  id; }
+    public Long getId(){
+        return id;
+    }
 
-    public String getFeature()  { return feature; }
+    public String getFeature() {
+        return feature;
+    }
 
     public String getValue() {
         return value;
@@ -53,6 +55,3 @@ public class FeatureData {
         return category;
     }
 }
-
-
-

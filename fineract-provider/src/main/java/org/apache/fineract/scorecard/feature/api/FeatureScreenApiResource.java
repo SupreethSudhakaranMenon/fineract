@@ -17,42 +17,22 @@
  * under the License.
  */
 
-package org.apache.fineract.scorecard.feature.data;
-
-public class FeatureData {
-
-    private final Long id;
-    private final String feature;
-    private final String value;
-    private final String data;
-    private final String category;
+package org.apache.fineract.scorecard.feature.api;
 
 
 
-    public FeatureData (final Long id, final String feature, final String value, final String data, final String category) {
-        this.id = id;
-        this.feature = feature;
-        this.value = value;
-        this.data = data;
-        this.category = category;
-    }
 
-    public Long getId() { return  id; }
+import org.springframework.stereotype.Component;
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+import javax.ws.rs.Path;
 
-    public String getFeature()  { return feature; }
 
-    public String getValue() {
-        return value;
-    }
 
-    public String getData() {
-        return data;
-    }
-
-    public String getCategory() {
-        return category;
-    }
+@Component
+@Path("/FeatureScreen")
+public class FeatureScreenApiResource {
+    @GET
+    @Produces("text/plain")
+    public String getClichedMessage()  { return "FeatureScreen"; }
 }
-
-
-
