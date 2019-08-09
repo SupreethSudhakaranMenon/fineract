@@ -95,6 +95,18 @@ CREATE TABLE `m_feature` (
     PRIMARY KEY (`id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `m_configuration` (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `product` varchar(20) DEFAULT NULL,
+    `category` varchar(20) DEFAULT NULL,
+    `feature` varchar(20) DEFAULT NULL,
+    `weight` varchar(20) DEFAULT NULL,
+    `colour` varchar(20) DEFAULT NULL,
+    `fromrange` varchar(20) DEFAULT NULL,
+    `torange` varchar(20) DEFAULT NULL,
+    `value` varchar(20) DEFAULT NULL,
+)
+
 
 --==========================  end  of scorecard tables ========================= --
 
