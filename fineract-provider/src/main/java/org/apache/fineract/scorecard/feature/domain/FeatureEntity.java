@@ -19,10 +19,9 @@
 
 package org.apache.fineract.scorecard.feature.domain;
 
-
 import javax.persistence.*;
 import java.math.BigDecimal;
-//import lombok.Getter;
+
 
 @Entity
 @Table(name = "m_feature")
