@@ -47,6 +47,17 @@ public class CriteriaEntity {
     public CriteriaEntity() {
     }
 
+    /**
+     * Data Fields for the Criteria Screen
+     * @param feature
+     * @param key
+     * @param sqlapi
+     * @param category
+     * @param product
+     * @param datasource
+     */
+
+
     public CriteriaEntity(String feature, String key, String sqlapi, String category, String product, String datasource) {
         this.feature = feature;
         this.keyvalue = key;
@@ -55,6 +66,12 @@ public class CriteriaEntity {
         this.product = product;
         this.datasource = datasource;
     }
+
+    /**
+     * getter and setter methods
+     * @return
+     */
+
 
     public BigDecimal getId() {
         return id;

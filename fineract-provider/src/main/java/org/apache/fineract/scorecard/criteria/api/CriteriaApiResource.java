@@ -52,6 +52,12 @@ public class CriteriaApiResource {
     public CriteriaApiResource(CriteriaService criteriaService) {
         this.criteriaService = criteriaService;
     }
+
+    /**
+     * Used for getting all the details for the Criteria Screen
+     * @return
+     */
+
     @Path("/getAllCriterias")
     @GET
     @Produces({ MediaType.APPLICATION_JSON })
@@ -59,27 +65,6 @@ public class CriteriaApiResource {
     @ApiResponses({@ApiResponse(code = 200, message = "", response = CriteriaSaveRequest.class, responseContainer = "list")})
     public List<CriteriaSaveRequest> getAllFeaturesFunction()
     {
-//        String message;
-//        JSONObject json = new JSONObject();
-//
-//        JSONArray array = new JSONArray();
-//        JSONObject item = new JSONObject();
-//        item.put("feature", "Feature1");
-//        item.put("valueType", "Binary");
-//        item.put("dataType", "Numeric");
-//        item.put("category", "Country");
-//        array.add(item);
-//
-//        JSONObject item1 = new JSONObject();
-//        item1.put("feature", "Feature2");
-//        item1.put("valueType", "Nominal");
-//        item1.put("dataType", "Numeric");
-//        item1.put("category", "Loan");
-//        array.add(item1);
-//
-//        json.put("Feature", array);
-//        message = json.toString();
-//        return message;
         List<CriteriaEntity> lst = this.criteriaService.getAllCriterias();
         List<CriteriaSaveRequest> lstOfResponse = new ArrayList<>();
         for(CriteriaEntity fe:lst){
@@ -88,6 +73,12 @@ public class CriteriaApiResource {
         }
         return lstOfResponse;
     }
+
+    /**
+     * Used for saving details for the Criteria Screen
+     * @param request data for the fields
+     * @return new ResponseEntity
+     */
 
     @POST
     @Path("/saveCriteria")

@@ -42,14 +42,25 @@ public class ConfigureService {
         this.configRepository = configRepository;
     }
 
-    public ConfigEntity createConfiguration(final ConfigEntity featureEntity){
+    /**
+     * .save(configEntity) making use of Java Doc (CrudRepository.java)
+     * Used for saving the details of Configuration Screen
+     * @param configEntity
+     * @return
+     */
+
+    public ConfigEntity createConfiguration(final ConfigEntity configEntity){
         this.securityContext.authenticatedUser();
-        return this.configRepository.save(featureEntity);
+        return this.configRepository.save(configEntity);
     }
 
+    /**
+     * .findAll() making use of Java Doc (JpaRepository.java)
+     * Used for fetching all the details of Configuration Screen
+     * @return
+     */
+
     public List<ConfigEntity> getAllConfigs(){
-        System.out.println("*********************");
-//        this.securityContext.authenticatedUser();
         return this.configRepository.findAll();
     }
 }

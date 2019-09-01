@@ -30,6 +30,11 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import java.math.BigDecimal;
 import javax.validation.constraints.*;
 
+/**
+ * Used JsonIgnoreProperties for ignoring the logical property
+ * used in serialization and deserialization
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FeatureSaveRequest   {
     @JsonProperty("id")
@@ -61,6 +66,11 @@ public class FeatureSaveRequest   {
 
     public FeatureSaveRequest() {
     }
+
+    /**
+     * getter and setter methods
+     * @return
+     */
 
     public BigDecimal getId() {
         return id;

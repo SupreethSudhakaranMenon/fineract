@@ -35,21 +35,25 @@ public class CriteriaService {
     @Autowired
     private CriteriaRepository criteriaRepository;
 
-//    @Autowired
-//    public FeatureService(PlatformSecurityContext securityContext, FeatureRepository featureRepository) {
-//        super();
-//        this.securityContext = securityContext;
-//        this.featureRepository = featureRepository;
-//    }
+    /**
+     * .save(criteriaEntity) making use of Java Doc (CrudRepository.java)
+     * Used for saving the details of Criteria Screen
+     * @param criteriaEntity
+     * @return
+     */
 
     public CriteriaEntity createCriteria(final CriteriaEntity criteriaEntity){
         this.securityContext.authenticatedUser();
         return this.criteriaRepository.save(criteriaEntity);
     }
 
+    /**
+     * .findAll() making use of Java Doc (JpaRepository.java)
+     * Used for fetching all the details of Criteria Screen
+     * @return
+     */
+
     public List<CriteriaEntity> getAllCriterias(){
-        System.out.println("*********************");
-//        this.securityContext.authenticatedUser();
         return this.criteriaRepository.findAll();
     }
 }

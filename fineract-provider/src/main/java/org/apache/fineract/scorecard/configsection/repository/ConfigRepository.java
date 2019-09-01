@@ -23,5 +23,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
 
+/**
+ * Here the class used is ConfigEntity and BigDecimal.class
+ * ConfigEntity.java has the table name used for saving the details.
+ * BigDecimal.class used for math properties.
+ */
+
 public interface ConfigRepository extends JpaRepository<ConfigEntity, BigDecimal> {
 }

@@ -45,6 +45,16 @@ public class FeatureEntity {
     public FeatureEntity() {
     }
 
+    /**
+     * Data fields for the Feature Screen
+     * @param id
+     * @param feature
+     * @param value
+     * @param data
+     * @param category
+     * @param status
+     */
+
     public FeatureEntity(BigDecimal id, String feature, String value, String data, String category, String status) {
         this.id = id;
         this.feature = feature;
@@ -61,6 +71,12 @@ public class FeatureEntity {
         this.category = category;
         this.status = status;
     }
+
+    /**
+     * getter and setter methods
+     * @return
+     */
+
     public BigDecimal getId() {
         return id;
     }

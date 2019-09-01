@@ -25,6 +25,11 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.math.BigDecimal;
 
+/**
+ * Used JsonIgnoreProperties for ignoring the logical property
+ * used in serialization and deserialization.
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ConfigSaveRequest   {
     @JsonProperty("id")
@@ -64,6 +69,20 @@ public class ConfigSaveRequest   {
     public ConfigSaveRequest() {
     }
 
+    /**
+     * Data fields for the Configuration Screen
+     * @param feature
+     * @param product
+     * @param category
+     * @param weightage
+     * @param greenmax
+     * @param fromrange
+     * @param redmax
+     * @param redmin
+     * @param ambermax
+     * @param ambermin
+     */
+
     public ConfigSaveRequest( String feature, String product, String category, String weightage, String greenmax, String fromrange, String redmax, String redmin, String ambermax, String ambermin) {
         this.feature = feature;
         this.product = product;
@@ -76,6 +95,11 @@ public class ConfigSaveRequest   {
         this.ambermax = ambermax;
         this.ambermin = ambermin;
     }
+
+    /**
+     * getter and setter methods
+     * @return
+     */
 
     public BigDecimal getId() {
         return id;

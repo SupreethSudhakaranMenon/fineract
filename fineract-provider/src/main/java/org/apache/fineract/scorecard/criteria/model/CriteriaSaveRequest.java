@@ -25,6 +25,11 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.math.BigDecimal;
 
+/**
+ * Used JsonIgnoreProperties for ignoring the logical property
+ * used in serialization and deserialization
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CriteriaSaveRequest   {
     @JsonProperty("id")
@@ -51,6 +56,17 @@ public class CriteriaSaveRequest   {
     public CriteriaSaveRequest() {
     }
 
+    /**
+     * Data fields for the Criteria Screen
+     * @param id
+     * @param feature
+     * @param key
+     * @param sqlapi
+     * @param category
+     * @param product
+     * @param datasource
+     */
+
     public CriteriaSaveRequest(BigDecimal id, String feature, String key, String sqlapi, String category, String product, String datasource) {
         this.id = id;
         this.feature = feature;
@@ -60,6 +76,11 @@ public class CriteriaSaveRequest   {
         this.product = product;
         this.datasource = datasource;
     }
+
+    /**
+     * getter and setter methods
+     * @return
+     */
 
     public BigDecimal getId() {
         return id;

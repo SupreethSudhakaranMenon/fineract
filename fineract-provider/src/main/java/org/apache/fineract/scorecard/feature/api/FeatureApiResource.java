@@ -54,6 +54,12 @@ public class FeatureApiResource {
     public FeatureApiResource(FeatureService featureService) {
         this.featureService = featureService;
     }
+
+    /**
+     * Used for getting all the details for the  Feature Screen
+     * @return
+     */
+
     @Path("/getAllFeatures")
     @GET
     @Produces({ MediaType.APPLICATION_JSON })
@@ -69,6 +75,13 @@ public class FeatureApiResource {
         }
         return lstOfResponse;
     }
+
+    /**
+     * Used for saving details for the Feature Screen
+     * @param request data for the fields
+     * @return new ResponseEntity
+     */
+
 
     @POST
     @Path("/saveFeature")

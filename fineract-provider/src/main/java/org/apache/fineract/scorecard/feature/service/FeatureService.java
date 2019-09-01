@@ -35,21 +35,26 @@ public class FeatureService {
     @Autowired
     private  FeatureRepository featureRepository;
 
-//    @Autowired
-//    public FeatureService(PlatformSecurityContext securityContext, FeatureRepository featureRepository) {
-//        super();
-//        this.securityContext = securityContext;
-//        this.featureRepository = featureRepository;
-//    }
+    /**
+     * .save(featureEntity) making use of Java Doc (CrudRepository.java)
+     * Used for saving the details of Feature Screen
+     * @param featureEntity
+     * @return
+     */
+
 
     public FeatureEntity createFeature(final FeatureEntity featureEntity){
         this.securityContext.authenticatedUser();
         return this.featureRepository.save(featureEntity);
     }
 
+    /**
+     * .findAll() making use of Java Doc (JpaRepository.java)
+     * Used for fetching all the details of Feature Screen
+     * @return
+     */
+
     public List<FeatureEntity> getAllFeatures(){
-        System.out.println("*********************");
-//        this.securityContext.authenticatedUser();
         return this.featureRepository.findAll();
     }
 }

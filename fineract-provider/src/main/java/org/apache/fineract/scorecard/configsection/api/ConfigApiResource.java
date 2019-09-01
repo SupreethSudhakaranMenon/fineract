@@ -52,6 +52,12 @@ public class ConfigApiResource {
     public ConfigApiResource(ConfigureService configureService) {
         this.configureService = configureService;
     }
+
+    /**
+     * Used for getting all the details for the Configuration Screen
+     * @return
+     */
+
     @Path("/getAllConfig")
     @GET
     @Produces({ MediaType.APPLICATION_JSON })
@@ -69,6 +75,12 @@ public class ConfigApiResource {
         }
         return lstOfResponse;
     }
+
+    /**
+     * Used for saving details for the Configuration Screen
+     * @param request data for the fields
+     * @return new ResponseEntity
+     */
 
     @POST
     @Path("/saveConfig")

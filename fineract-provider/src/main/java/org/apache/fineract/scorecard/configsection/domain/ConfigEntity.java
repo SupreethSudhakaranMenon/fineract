@@ -30,15 +30,14 @@ public class ConfigEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigDecimal id ;
+
     private String feature ;
+
     private String product ;
 
     private String category ;
 
-
-
     private String weightage ;
-
 
     private String greenmax = null;
 
@@ -52,11 +51,22 @@ public class ConfigEntity {
 
     private String ambermin = null;
 
-
-
-
     public ConfigEntity() {
     }
+
+    /**
+     * Data Fields for the Configuration Screen
+     * @param feature
+     * @param product
+     * @param category
+     * @param weightage
+     * @param greenmax
+     * @param fromrange
+     * @param redmax
+     * @param redmin
+     * @param ambermax
+     * @param ambermin
+     */
 
     public ConfigEntity(String feature, String product, String category, String weightage, String greenmax, String fromrange, String redmax, String redmin, String ambermax, String ambermin) {
         this.feature = feature;
@@ -70,6 +80,12 @@ public class ConfigEntity {
         this.ambermax = ambermax;
         this.ambermin = ambermin;
     }
+
+    /**
+     * getter and setter methods
+     * @return
+     */
+
 
     public BigDecimal getId() {
         return id;

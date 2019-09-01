@@ -23,5 +23,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
 
+/**
+ * Here the class used is FeatureEntity and BigDecimal.class
+ * FeatureEntity.java has the table name used for saving the details.
+ * BigDecimal.class used for math properties.
+ */
+
 public interface FeatureRepository extends JpaRepository<FeatureEntity, BigDecimal> {
 }
