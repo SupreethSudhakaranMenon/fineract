@@ -24,6 +24,13 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
+/**
+ * Error Handling code for Feature Screen.
+ * Listed below properties can be used for Server Side Validation
+ * For Client Side Validation :
+ * It can be used as a response message on the frontend
+ */
+
 public class FaultModel   {
     @JsonProperty("faultString")
     private String faultString = null;

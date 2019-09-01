@@ -27,6 +27,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 
+/**
+ * Error Handling code for Feature Screen.
+ * Listed below properties can be used for Server Side Validation
+ * For Client Side Validation :
+ * It can be used as a response message on the frontend
+ */
+
 public class ErrorModel   {
     @JsonProperty("developerMessage")
     private String developerMessage = null;

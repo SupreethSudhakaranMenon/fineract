@@ -25,6 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
+/**
+ * Error Handling code for Criteria Screen.
+ * Listed below properties can be used for Server Side Validation
+ * For Client Side Validation :
+ * It can be used as a response message on the frontend
+ */
+
 public class ErrorModel   {
     @JsonProperty("developerMessage")
     private String developerMessage = null;
