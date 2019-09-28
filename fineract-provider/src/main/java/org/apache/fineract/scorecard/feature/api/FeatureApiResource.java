@@ -19,7 +19,6 @@
 
 
 package org.apache.fineract.scorecard.feature.api;
-
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -38,7 +37,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.springframework.web.bind.annotation.PathVariable;
 @Component
 @Path("/feature")
 public class FeatureApiResource {
@@ -47,12 +46,31 @@ public class FeatureApiResource {
     private  FeatureService featureService;
 
 
-
     public FeatureApiResource() {
     }
 
     public FeatureApiResource(FeatureService featureService) {
         this.featureService = featureService;
+    }
+
+    /**
+     * Get a single record by Id
+     */
+    @POST
+    @Path("/getByFeatureId")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON })
+    @ApiOperation(value = "feature controller", notes = "saves the feature values in db", response = FeatureSaveRequest.class, tags={ "feature-controller", })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully Saved the values.", response = FeatureSaveRequest.class),
+            @ApiResponse(code = 400, message = "Bad Request", response = ErrorModel.class),
+            @ApiResponse(code = 401, message = "Unauthorized", response = ErrorModel.class),
+            @ApiResponse(code = 405, message = "Method Not Allowed", response = ErrorModel.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = ErrorModel.class) })
+    public FeatureSaveRequest getByIdFunction(FeatureSaveRequest request)
+    {
+        FeatureEntity fe = this.featureService.getOneRecord(request.getId());
+       return new FeatureSaveRequest(fe.getId(),fe.getFeature(), fe.getValue(), fe.getData(), fe.getCategory(),fe.getStatus());
     }
 
     /**
@@ -95,7 +113,7 @@ public class FeatureApiResource {
             @ApiResponse(code = 405, message = "Method Not Allowed", response = ErrorModel.class),
             @ApiResponse(code = 500, message = "Internal Server Error", response = ErrorModel.class) })
     public ResponseEntity<String>  saveFeature(FeatureSaveRequest request){
-        FeatureEntity entity = new FeatureEntity(request.getFeature(), request.getValueType(), request.getDataType(), request.getCategory(),request.getStatus());
+        FeatureEntity entity = new FeatureEntity(request.getId(),request.getFeature(), request.getValueType(), request.getDataType(), request.getCategory(),request.getStatus());
 
         entity = this.featureService.createFeature(entity);
 

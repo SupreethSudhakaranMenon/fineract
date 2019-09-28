@@ -85,7 +85,7 @@ openjpa {
 }
 
 rat {
-  xmlOutput = false
+  xmlOutput = true
   htmlOutput = false
   plainOutput = true
   verbose = false

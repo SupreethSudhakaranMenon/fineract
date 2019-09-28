@@ -25,7 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+import java.math.BigDecimal;
 @Service
 public class FeatureService {
 
@@ -56,5 +56,13 @@ public class FeatureService {
 
     public List<FeatureEntity> getAllFeatures(){
         return this.featureRepository.findAll();
+    }
+
+    /**
+     * getOne
+     */
+    public FeatureEntity getOneRecord(BigDecimal id){
+        this.securityContext.authenticatedUser();
+        return this.featureRepository.findOne(id);
     }
 }
