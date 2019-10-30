@@ -96,6 +96,20 @@ public class ConfigSaveRequest   {
         this.ambermin = ambermin;
     }
 
+    public ConfigSaveRequest(BigDecimal id, String feature, String product, String category, String weightage, String greenmax, String fromrange, String redmax, String redmin, String ambermax, String ambermin) {
+        this.feature = feature;
+        this.product = product;
+        this.category = category;
+        this.weightage = weightage;
+        this.greenmax = greenmax;
+        this.greenmin = fromrange;
+        this.redmax = redmax;
+        this.redmin = redmin;
+        this.ambermax = ambermax;
+        this.ambermin = ambermin;
+        this.id = id;
+    }
+
     /**
      * getter and setter methods
      * @return

@@ -53,6 +53,27 @@ public class ConfigApiResource {
         this.configureService = configureService;
     }
 
+        /**
+     * Get a single record by Id
+     */
+    @POST
+    @Path("/getByConfigId")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON })
+    @ApiOperation(value = "Config controller", notes = "saves the config values in db", response = ConfigSaveRequest.class, tags={ "config-controller", })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully Saved the values.", response = ConfigSaveRequest.class),
+            @ApiResponse(code = 400, message = "Bad Request", response = ErrorModel.class),
+            @ApiResponse(code = 401, message = "Unauthorized", response = ErrorModel.class),
+            @ApiResponse(code = 405, message = "Method Not Allowed", response = ErrorModel.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = ErrorModel.class) })
+    public ConfigSaveRequest getByIdFunction(ConfigSaveRequest request)
+    {
+        ConfigEntity fe = this.configureService.getOneRecord(request.getId());
+
+       return new ConfigSaveRequest(fe.getId(),fe.getFeature(),fe.getProduct(), fe.getCategory(), fe.getWeightage(), fe.getGreenmax(),
+       fe.getGreenmin(), fe.getRedmax(), fe.getRedmin(), fe.getAmbermax(), fe.getAmbermin() );
+    }
     /**
      * Used for getting all the details for the Configuration Screen
      * @return
@@ -69,7 +90,7 @@ public class ConfigApiResource {
         List<ConfigEntity> lst = this.configureService.getAllConfigs();
         List<ConfigSaveRequest> lstOfResponse = new ArrayList<>();
         for(ConfigEntity fs:lst){
-            ConfigSaveRequest fe = new ConfigSaveRequest( fs.getFeature(), fs.getProduct(),fs.getCategory(),fs.getWeightage(),fs.getGreenmax(),fs.getGreenmin(),fs.getRedmax(),fs.getRedmin(),fs.getAmbermax(),
+            ConfigSaveRequest fe = new ConfigSaveRequest(fs.getId(), fs.getFeature(), fs.getProduct(),fs.getCategory(),fs.getWeightage(),fs.getGreenmax(),fs.getGreenmin(),fs.getRedmax(),fs.getRedmin(),fs.getAmbermax(),
                     fs.getAmbermin());
             lstOfResponse.add(fe);
         }

@@ -24,6 +24,7 @@ import org.apache.fineract.scorecard.configsection.repository.ConfigRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -62,5 +63,13 @@ public class ConfigureService {
 
     public List<ConfigEntity> getAllConfigs(){
         return this.configRepository.findAll();
+    }
+
+        /**
+     * getOne
+     */
+    public ConfigEntity getOneRecord(BigDecimal id){
+        this.securityContext.authenticatedUser();
+        return this.configRepository.findOne(id);
     }
 }
